@@ -6,10 +6,9 @@ Defines the index_range function
 
 def index_range(page, page_size):
     """
-    Return tuple of size two containing a start index
-    and end index corresponding to the range of indexes to return
-    in a list for those partiular pagination parameters
+    Returns the start and stop indexes of a page
     """
+
     total_page = (page * page_size) - 1
     start = 0
     end = page_size
