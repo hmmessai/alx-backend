@@ -6,20 +6,21 @@ import csv
 import math
 from typing import Dict, List, Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-            """
-            Returns the start and stop indexes of a page
-            """
+    """
+    Returns the start and stop indexes of a page
+    """
 
-            total_page = (page * page_size) - 1
-            start = 0
-            end = page_size
+    total_page = (page * page_size) - 1
+    start = 0
+    end = page_size
 
-            for i in range(0, total_page, page_size):
-                start = i
-                end = i + page_size
+    for i in range(0, total_page, page_size):
+        start = i
+        end = i + page_size
 
-            return (start, end)
+    return (start, end)
 
 
 class Server:
@@ -61,7 +62,6 @@ class Server:
 
         return req_page
 
-
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         Retrieves information about a page
@@ -72,7 +72,7 @@ class Server:
         next_page = page + 1 if ((page + 1) <= data_len) else None
         prev_page = page - 1 if ((page - 1) >= 1) else None
         total_pages = math.ceil(data_len / page_size)
-        
+
         return {
                 'page_size': page_size,
                 'page': page,
