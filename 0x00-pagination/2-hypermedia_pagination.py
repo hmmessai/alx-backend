@@ -46,10 +46,10 @@ class Server:
         """
         Returns the page for the specified values
         """
-        assert type(page) == int, "page must be integer"
-        assert type(page_size) == int, "page_size must be integer"
-        assert page > 0, "page must be greater than zero"
-        assert page_size > 0, "page_size must be greater than zero"
+        assert type(page) == int
+        assert type(page_size) == int
+        assert page > 0
+        assert page_size > 0
 
         start, end = index_range(page, page_size)
         req_page = []
