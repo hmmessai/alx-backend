@@ -54,11 +54,14 @@ class Server:
         start, end = index_range(page, page_size)
         req_page = []
 
-        if end >= len(self.dataset()) and start > len(self.dataset()):
+        if end > len(self.dataset()) and start > len(self.dataset()):
             return req_page
 
         for i in range(start, end):
-            req_page.append(self.dataset()[i])
+            try:
+                req_page.append(self.dataset()[i])
+            except Exception:
+                pass
 
         return req_page
 
