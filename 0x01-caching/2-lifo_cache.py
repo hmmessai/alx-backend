@@ -15,7 +15,7 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """Assigns an item with the required key to the cache
         """
-        if key != None and item != None:
+        if key is not None and item is not None:
             if key in self.cache_data.keys():
                 self.cache_data[key] = item
             elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
@@ -28,6 +28,6 @@ class LIFOCache(BaseCaching):
     def get(self, key):
         """Retrieves value related to given key
         """
-        if key == None or key not in self.cache_data.keys():
+        if key is None or key not in self.cache_data.keys():
             return None
         return self.cache_data[key]
