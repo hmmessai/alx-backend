@@ -29,9 +29,9 @@ def home() -> str:
     home_header = gettext("Hello world!")
     
     return render_template('3-index.html',
-                            home_title=home_title,
-                            home_header=home_header
-                            )
+                        home_title=home_title,
+                        home_header=home_header
+                        )
 
 
 if __name__ == '__main__':
