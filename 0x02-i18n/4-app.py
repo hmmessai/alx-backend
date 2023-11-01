@@ -33,13 +33,7 @@ def get_locale():
 @app.route('/', strict_slashes=False)
 def home() -> str:
     """Serves the index.html file for home"""
-    home_title = gettext("Welcome to Holberton")
-    home_header = gettext("Hello world!")
-
-    return render_template('4-index.html',
-                           home_title=home_title,
-                           home_header=home_header
-                           )
+    return render_template('4-index.html')
 
 
 if __name__ == '__main__':
