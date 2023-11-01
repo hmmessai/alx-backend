@@ -21,6 +21,7 @@ def get_locale():
     """Gets the locale"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+
 @app.route('/', strict_slashes=False)
 def home() -> str:
     """Serves the index.html file for home"""
